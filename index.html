@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Life - Music Production</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-left">
+                <button class="back-button"><i class="fas fa-chevron-left"></i></button>
+                <h1 class="page-title">[untitled]</h1>
+            </div>
+            <div class="nav-right">
+                <button class="user-button"><i class="fas fa-user"></i></button>
+                <button class="search-button"><i class="fas fa-search"></i></button>
+                <button class="menu-button"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div id="home-view" class="view active">
+                <div class="projects-container">
+                    <!-- Project cards will be dynamically added here -->
+                </div>
+                <div class="start-project-container">
+                    <div class="start-project-card">
+                        <div class="gradient-icon"></div>
+                        <h2>Start your first project</h2>
+                        <p>Create a home for your work-in-progress music</p>
+                        <button class="add-audio-btn">Add Audio</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="library-view" class="view">
+                <div class="library-grid">
+                    <!-- Library items will be dynamically added here -->
+                </div>
+            </div>
+
+            <div id="project-view" class="view">
+                <div class="project-header">
+                    <div class="project-cover">
+                        <button class="edit-cover-btn"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">untitled project</h2>
+                        <p class="project-details">0bpm • track: 00-</p>
+                    </div>
+                    <div class="project-actions">
+                        <button class="play-pause-btn"><i class="fas fa-play"></i></button>
+                        <button class="edit-project-btn"><i class="fas fa-edit"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Nuevo reproductor de audio con visualización circular como overlay -->
+                <div class="audio-player-container">
+                    <div class="audio-player">
+                        <button class="close-player-btn"><i class="fas fa-times"></i></button>
+                        <div class="track-title-container">
+                            <h3 class="current-track-title">Feedback</h3>
+                            <p class="current-track-project">untitled project</p>
+                        </div>
+                        <div class="circular-player">
+                            <div class="circular-cover"></div>
+                        </div>
+                        <div class="waveform-container">
+                            <div class="waveform-visualization"></div>
+                            <div class="progress-indicator"></div>
+                        </div>
+                        <div class="time-display-container">
+                            <span class="current-time">00:00</span>
+                            <span class="time-separator">/</span>
+                            <span class="total-time">00:00</span>
+                        </div>
+                        <div class="player-controls">
+                            <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                            <button class="rewind-btn"><i class="fas fa-step-backward"></i></button>
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <button class="forward-btn"><i class="fas fa-step-forward"></i></button>
+                            <button class="repeat-btn"><i class="fas fa-redo"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-tracks">
+                    <div class="add-tracks-container">
+                        <button class="add-tracks-btn">+ Add tracks</button>
+                    </div>
+                    <div class="tracks-list">
+                        <!-- Tracks will be dynamically added here -->
+                    </div>
+                </div>
+                <div class="playback-controls">
+                    <div class="playback-info">
+                        <div class="track-feedback">
+                            <span>Feedback</span>
+                            <span class="track-status">New</span>
+                        </div>
+                    </div>
+                    <div class="playback-buttons">
+                        <button class="time-display">00:00 / 00:00</button>
+                        <div class="transport-controls">
+                            <button class="rewind-btn"><i class="fas fa-step-backward"></i></button>
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <button class="forward-btn"><i class="fas fa-step-forward"></i></button>
+                        </div>
+                        <div class="additional-controls">
+                            <button class="loop-btn"><i class="fas fa-redo"></i></button>
+                            <button class="volume-btn"><i class="fas fa-volume-up"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="signup-view" class="view">
+                <div class="signup-container">
+                    <div class="cd-icon"></div>
+                    <h2>Choose a username</h2>
+                    <p>You can change this any time</p>
+                    <input type="text" class="username-input" placeholder="Username">
+                    <button class="next-btn">Next</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="playback-bar">
+                <div class="playback-project">
+                    <div class="playback-project-icon"></div>
+                    <div class="playback-project-info">
+                        <span class="playback-project-name">Feedback</span>
+                        <span class="playback-project-status">untitled project</span>
+                    </div>
+                </div>
+                <div class="playback-time">00:00 / 00:00</div>
+                <div class="playback-controls-mini">
+                    <button class="mini-rewind-btn"><i class="fas fa-step-backward"></i></button>
+                    <button class="mini-play-btn"><i class="fas fa-play"></i></button>
+                    <button class="mini-forward-btn"><i class="fas fa-step-forward"></i></button>
+                </div>
+                <div class="additional-controls-mini">
+                    <button class="mini-shuffle-btn"><i class="fas fa-random"></i></button>
+                    <button class="mini-repeat-btn"><i class="fas fa-redo"></i></button>
+                    <button class="mini-list-btn"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-view="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="nav-tab" data-view="library">
+                    <i class="fas fa-book"></i>
+                    <span>Library</span>
+                </button>
+                <button class="nav-tab add-tab">
+                    <div class="add-circle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Add Project Modal -->
+        <div id="add-project-modal" class="modal">
+            <div class="modal-content">
+                <h2>Create New Project</h2>
+                <div class="edit-project-cover">
+                    <div class="new-cover-preview"></div>
+                    <button class="add-cover-btn">Add Cover</button>
+                </div>
+                <input type="text" id="project-name" placeholder="Project Name">
+                <div class="color-picker">
+                    <div class="color-option" data-color="pink"></div>
+                    <div class="color-option" data-color="blue"></div>
+                    <div class="color-option" data-color="green"></div>
+                    <div class="color-option" data-color="orange"></div>
+                    <div class="color-option" data-color="purple"></div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="create-btn">Create</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Project Modal -->
+        <div id="edit-project-modal" class="modal">
+            <div class="modal-content">
+                <h2>Edit Project</h2>
+                <div class="edit-project-cover">
+                    <div class="current-cover-preview"></div>
+                    <button class="change-cover-btn">Change Cover</button>
+                </div>
+                <input type="text" id="edit-project-name" placeholder="Project Name">
+                <div class="color-picker">
+                    <div class="color-option" data-color="pink"></div>
+                    <div class="color-option" data-color="blue"></div>
+                    <div class="color-option" data-color="green"></div>
+                    <div class="color-option" data-color="orange"></div>
+                    <div class="color-option" data-color="purple"></div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="delete-project-btn">Delete</button>
+                    <button class="cancel-edit-btn">Cancel</button>
+                    <button class="save-edit-btn">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Context Menu for Library Items -->
+        <div id="context-menu" class="context-menu">
+            <ul>
+                <li id="play-all-tracks"><i class="fas fa-play"></i> Play All Tracks</li>
+                <li id="edit-project"><i class="fas fa-edit"></i> Edit Project</li>
+                <li id="delete-project"><i class="fas fa-trash"></i> Delete Project</li>
+            </ul>
+        </div>
+
+        <!-- Modal para solicitar acceso al directorio de audio -->
+        <div id="storage-access-modal" class="modal">
+            <div class="modal-content">
+                <h2>Acceso al almacenamiento</h2>
+                <p>Music Life necesita acceso a un directorio para guardar tus archivos de audio.</p>
+                <p>Esto permite que tus canciones se guarden permanentemente y no se pierdan al actualizar la página.</p>
+                <div class="modal-buttons">
+                    <button class="grant-storage-access-btn">Conceder acceso</button>
+                    <button class="skip-storage-access-btn">Omitir por ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
